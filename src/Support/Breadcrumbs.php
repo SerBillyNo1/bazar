@@ -50,7 +50,7 @@ class Breadcrumbs implements Arrayable
         return array_reduce($uris, function (array $breadcrumbs, string $uri) use ($segments): array {
             $keys = array_keys($breadcrumbs);
 
-            $segment = $segments[count($breadcrumbs)];
+            $segment = $segments[count($breadcrumbs)] ?? "";
 
             $path = end($keys).'/'.$segment;
 
